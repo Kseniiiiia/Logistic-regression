@@ -1,4 +1,5 @@
 # Logistic-regression
+Предлагается реализовать модель логистической регрессии о обучить ее на датасете изображений. Изображения двух типов - на одних присутствует коробка, на других нет
 
 ## Загрузка данных
 ``` python
@@ -55,3 +56,11 @@ b = b - learning_rate*db
 ## График зависимости значения функции потерь от количества итераций
 (при разных значениях параметра `learning_rate`)
 ![image](https://github.com/user-attachments/assets/76799bc9-9daf-48b7-ac80-bf19b0112683)
+
+## Точность модели
+Если `Y_prediction_train` и `y_train` совпали, то это означает, что наше предположение о том, есть ли коробка, совпало с правильным ответом. Далее просто посчитаем среднее значение 
+```python
+print("train accuracy: {} %".format(100-np.mean(np.abs(Y_prediction_train - y_train)) * 100))
+print("test accuracy: {} %".format(100 - np.mean(np.abs(Y_prediction_test - y_test)) * 100))
+```
+![photo_5321071056900972576_y](https://github.com/user-attachments/assets/5b568ec6-83b2-4597-be16-a9ee2c63a5fa)
